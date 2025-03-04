@@ -69,8 +69,8 @@ o	Note: Align alleles carefully (check reference / alternate alleles) and ensure
 4.	Run SuSiE per Block  <br>
 o	Function: susie_rss(bhat, shat, R, n, ...).  <br>
 o	Outputs:  <br>
-1.	Posterior Inclusion Probabilities (PIPs) for each SNP in the block.  <br>
-2.	Credible Sets (CS): Groups of SNPs that collectively have a high probability (e.g., 95%) of containing the causal variant(s).  <br>
+- Posterior Inclusion Probabilities (PIPs) for each SNP in the block.  <br>
+- Credible Sets (CS): Groups of SNPs that collectively have a high probability (e.g., 95%) of containing the causal variant(s).  <br>
 
 5.	Combine Results Across Blocks  <br>
 o	Merge Credible Sets: Gather the CS from each block into a single summary.  <br>
