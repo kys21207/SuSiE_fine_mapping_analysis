@@ -49,31 +49,35 @@
                    └────────────────────────────────────────────────┘
 
 ## Detailed Explanation of Each Step
-1.	GWAS Summary Stats + LD Blocks Definition
-o	GWAS Summary Statistics: Contains effect sizes (betas), standard errors, p‐values, and SNP identifiers.
-o	LD Blocks: Defined sets of contiguous SNPs expected to share high linkage disequilibrium.
-o	Tools to Define Blocks: Berisa & Pickrell’s blocks, EUR LD blocks from ijmacdon/LDblocks_GRCh38, or any published block definitions.
-2.	For Each LD Block
-o	Subset GWAS Summary Stats: Extract only the SNPs residing in that block.
-o	Subset Reference Genotype: Select the same set of SNPs from reference data (e.g., 1000 Genomes, UK Biobank).
-o	Compute Local LD Matrix: Typically done with PLINK (--r / --r2) or other LD‐computing routines for the SNP set in that block.
-3.	Prepare SuSiE Inputs for Each Block
-o	bhat: Vector of effect sizes (betas) from your GWAS summary for the block’s SNPs.
-o	shat: Vector of standard errors for those betas.
-o	R: LD matrix computed in Step 2.
-o	n: GWAS sample size.
-o	Note: Align alleles carefully (check reference / alternate alleles) and ensure consistent SNP ordering between bhat/shat and the rows/columns in R.
-4.	Run SuSiE per Block
-o	Function: susie_rss(bhat, shat, R, n, ...).
-o	Outputs: 
-1.	Posterior Inclusion Probabilities (PIPs) for each SNP in the block.
-2.	Credible Sets (CS): Groups of SNPs that collectively have a high probability (e.g., 95%) of containing the causal variant(s).
-5.	Combine Results Across Blocks
-o	Merge Credible Sets: Gather the CS from each block into a single summary.
-o	Summarize PIPs: Focus on SNPs with high PIPs across blocks or examine block‐by‐block.
-6.	Post‐Processing & Interpretation
-o	Variant Annotation: Use VEP, ANNOVAR, or other annotation tools.
-o	v2g Mapping: Link fine‐mapped variants to target genes via eQTL colocalization, chromatin interaction data, etc.
-o	Visualization: Plot PIPs, create LocusZoom plots, or highlight variants in regional association plots.
-o	Biological Follow‐Up: Investigate identified credible set variants in labs or cross‐reference literature.
+1.	GWAS Summary Stats + LD Blocks Definition <br>
+o	GWAS Summary Statistics: Contains effect sizes (betas), standard errors, p‐values, and SNP identifiers.  <br>
+o	LD Blocks: Defined sets of contiguous SNPs expected to share high linkage disequilibrium.  <br>
+o	Tools to Define Blocks: Berisa & Pickrell’s blocks, EUR LD blocks from ijmacdon/LDblocks_GRCh38, or any published block definitions.  <br>
+
+2.	For Each LD Block  <br>
+o	Subset GWAS Summary Stats: Extract only the SNPs residing in that block.  <br>
+o	Subset Reference Genotype: Select the same set of SNPs from reference data (e.g., 1000 Genomes, UK Biobank).  <br>
+o	Compute Local LD Matrix: Typically done with PLINK (--r / --r2) or other LD‐computing routines for the SNP set in that block.  <br>
+
+3.	Prepare SuSiE Inputs for Each Block  <br>
+o	bhat: Vector of effect sizes (betas) from your GWAS summary for the block’s SNPs.  <br>
+o	shat: Vector of standard errors for those betas.  <br>
+o	R: LD matrix computed in Step 2.  <br>
+o	n: GWAS sample size.  <br>
+o	Note: Align alleles carefully (check reference / alternate alleles) and ensure consistent SNP ordering between bhat/shat and the rows/columns in R.  <br>
+
+4.	Run SuSiE per Block  <br>
+o	Function: susie_rss(bhat, shat, R, n, ...).  <br>
+o	Outputs:  <br>
+1.	Posterior Inclusion Probabilities (PIPs) for each SNP in the block.  <br>
+2.	Credible Sets (CS): Groups of SNPs that collectively have a high probability (e.g., 95%) of containing the causal variant(s).  <br>
+
+5.	Combine Results Across Blocks  <br>
+o	Merge Credible Sets: Gather the CS from each block into a single summary.  <br>
+o	Summarize PIPs: Focus on SNPs with high PIPs across blocks or examine block‐by‐block.  <br>
+6.	Post‐Processing & Interpretation  <br>
+o	Variant Annotation: Use VEP, ANNOVAR, or other annotation tools.  <br>
+o	v2g Mapping: Link fine‐mapped variants to target genes via eQTL colocalization, chromatin interaction data, etc.  <br>
+o	Visualization: Plot PIPs, create LocusZoom plots, or highlight variants in regional association plots.  <br>
+o	Biological Follow‐Up: Investigate identified credible set variants in labs or cross‐reference literature. <br>
 
