@@ -48,7 +48,7 @@
                    │    - Visualization (PIPs, LocusZoom, etc.)     │ 
                    └────────────────────────────────────────────────┘
 
-Detailed Explanation of Each Step
+## Detailed Explanation of Each Step
 1.	GWAS Summary Stats + LD Blocks Definition
 o	GWAS Summary Statistics: Contains effect sizes (betas), standard errors, p‐values, and SNP identifiers.
 o	LD Blocks: Defined sets of contiguous SNPs expected to share high linkage disequilibrium.
