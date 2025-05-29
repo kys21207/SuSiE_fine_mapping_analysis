@@ -10,11 +10,10 @@ suppressPackageStartupMessages({
 
 # Parse command line arguments
 option_list <- list(
-  make_option("--eqtl_data_file", type="character", 
-              default=NULL,
+  make_option("--eqtl_data_file", type="character", default=NULL,
               help="Path to eqtl index file", metavar="CHARACTER"),
   make_option("--eqtl_name_prefix", type="character", default=NULL,
-              help="gwas file name prefix", metavar="CHARACTER")
+              help="gwas file name prefix", metavar="CHARACTER"),
   make_option("--eqtl_info_file", type="character", default=NULL,
               help="eqtl sample size file", metavar="CHARACTER")
 )
