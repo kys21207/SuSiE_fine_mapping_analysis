@@ -71,6 +71,7 @@ o	Function: susie_rss(bhat, shat, R, n, ...).  <br>
 o	Outputs:  <br>
 - Posterior Inclusion Probabilities (PIPs) for each SNP in the block.  <br>
 - Credible Sets (CS): Groups of SNPs that collectively have a high probability (e.g., 95%) of containing the causal variant(s).  <br>
+### The script uses Swiss-army-knife for parallele computing on JypterLab (DNAnexus)
 
 5.	Combine Results Across Blocks  <br>
 o	Merge Credible Sets: Gather the CS from each block into a single summary.  <br>
